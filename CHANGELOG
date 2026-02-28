@@ -1,0 +1,151 @@
+v1.4: January 6th 2019
+* Fixed crash with checksumming enabled
+* Various queue length changes
+* Changed default input processing to "loose" for file interfaces
+* Minor change to how default values for "strict" applied
+* Fixed possible null pointer exception in serial interface argument processing
+* Minor changes to persistent tcp behaviour
+* Add support for B460800 and B230400 baud rates
+* Make lowering file descriptor limits debug rather than warning
+* Fix lack of null termination on interface names
+* Make ~/.kplex.conf per-user conf file on OSX deprecating previous location
+* Add -p option for pid file
+* Add man page
+* Fix errors in preamble parsing
+
+v1.3.4: June 26th 2016
+* Fixed bug with optional interfaces
+* Fixed udp port assignment bug
+
+v1.3.3: May 7th 2016
+* Fixed crash in udp code with openvpn
+* Fixed broken filtering
+
+v1.3.2: April 21st 2016
+* Added gpsd support
+* Fixed various udp handling bugs
+* Fixed various bugs on tcp reconnect
+* Improve reconnection handling
+* Added much more debugging
+* Give interfaces default names
+
+v1.3.1: September 27th 2015
+* Fixed various uninitialised pointer fixes
+* Updated Makefile for OpenWRT and github builds
+* Accept NULL as a sentence terminator with "strict=no"
+* Fixed problem with non-truncation of output files
+* Better guessing of UDP interface parameters
+* Define ACCESSPERMS, remove redundant declarations, add header guards
+* Fixed bug in source filtering
+* Added option to re-enable nagle for TCP interfaces
+* "-d" flag now documented with additional debugging
+* Default queue sizes reduced and SNDBUF size reduced
+* Added optional interface to filter rules
+
+v1.3: April 15th 2015
+* Added "preamble" option to tcp interfaces
+* Fixed bugs in failover specification parsing
+* Added udp: interface type
+* Added AIS coalescing
+* Added strict parsing option
+* Fixed bug in file output to new files
+
+v1.2: January 6th 2015
+* eol=n now optional on other interface types
+* srctag=input option
+* owner=,group= and perm= options for pty and output file interfaces
+* Fixed bug in tcp server src TAGs
+* Fixed multiple tcp persist bugs
+* Remove pty symlinks on exit
+* Updates for NetBSD portability
+* Fixed TAG checksum bug
+
+v1.1.1: November 12th 2014
+* Added presist=fromstart option
+* Fixed serial ports in OS X
+* Fixed processing of file interfaces with "eol=rn"
+* Fixed specification of multicast interface
+* Fixed bug with outbound serial interface TAG processing
+* Fixed bug with TAG timestamps
+* Added fromstart value for persist option
+* Minor comment corrections
+* Minor changes for greater POSIX compatibility
+
+v1.1: June 5th 2014
+* Parsing algorithm changed to strip TAG blocks
+* Added optional TAG-based timestamping
+* Added optional TAG-based source identifiers
+* Added GoFree support
+* Added loopback option
+* Added keepalive options to tcp interfaces
+* Added timeout option to tcp interfaces
+* Added more supported baud rates for serial and pty interfaces
+* More consistent interface specifiers for broadcast and multicast
+* Corrected bug in default port assignment for broadcast interfaces
+* Fixed bugs in tcp persist code
+
+v1.0: 31st August 2013
+* Added multicast support
+* Added "persist" and "retry" options for tcp client interfaces
+* Added support for rate limiting
+* Disable Nagle algorithm on tcp interfaces
+* Fix bug in appending to non-existent files
+* Fix hang when configuration with no inputs specified
+* Corrected multiple typos in README
+
+v0.2.11: 25th June 2013
+* Fixed error with seatalk flag in serial.c
+* Fixed makefile for bsd/macos
+* Improved error reporting for broadcast interfaces
+* Fix failure-to-exit bug when using tcp server
+* Special handling of and improved support for FIFOs
+* Ignore SIGPIPE to avoid crashes writing to FIFOs
+* Added append mode for output files
+* Enable use of redirected standard input and output in background mode
+* Added persist flag for FIFOs
+* Added eol option for \r\n line termination with file interfaces
+* Make file output line buffered
+* Reduce max sentence size to the 80 chars it was always meant to be
+* Fixed tcp server filter inheritace bug
+* Fixed bug resulting in qsize option being ignored for tcp and serial
+
+v0.2.10: 31st March 2013
+* Fixed crash when interface error condition encountered on startup
+
+v0.2.9: 4th March 2013
+* Fixed bug with input interfaces exiting before output startup
+* Updated documentation to correctly describe use of "device" option
+* Fixed segv in file error handling
+* Fixed crash with input-only tcp servers
+* Added "-V" flag for version identification
+
+v0.2.8: 16th January 2013
+* Fixed bug in shutdown of bi-directional tcp server
+* Minor cosmetic source tweaks
+* Minor non-code adjustments for Debian packaging
+* Added example configuration kplex.conf.ex
+
+v0.2.7: 27th December 2012
+* Fixed crash and hang on exit bug with unidirectional tcp servers
+
+v0.2.6: 18th December 2012
+* Fixed "port out of range" problem with UDP broadcast interfaces
+
+v0.2.5: 10th December 2012
+* Fixed various POSIX compatibility isses
+
+v0.2.4: 30th November 2012
+* Support for FreeBSD
+* Explicit enabling of support for IPv6-mapped-IPv4 for platforms where this is
+  disabled by default
+
+v0.2.3: 28th November 2012
+* Fixed multiple problems with broadcast interfaces
+* Fixed bug in handling of unclosed quotes arround arguments
+
+v0.2.2: 27th November 2012
+* Changed user config file to ~/Library/Preferences/kplex.ini on OS X
+* Source tidy to silence compiler warnings on OS X
+
+v.0.2: 21st November 2012
+* Initial public test release
