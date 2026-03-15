@@ -1,5 +1,5 @@
 ````
-nano \etc\kplex.conf
+nano /etc/kplex.conf
 ````
 ````
 # Ensure that the user running kplex has read-write permission
