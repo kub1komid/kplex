@@ -1,3 +1,9 @@
+cek TTYUSB...
+````
+sudo dmesg | grep ttyUSB
+````
+dan mucul `[    2.841367] usb 1-8: ch341-uart converter now attached to ttyUSB0`
+#
 ````
 nano /etc/kplex.conf
 ````
